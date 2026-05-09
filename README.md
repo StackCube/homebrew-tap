@@ -6,8 +6,9 @@ Homebrew tap for the [StackCube](https://stackcube.dev) suite.
 
 ```sh
 brew tap stackcube/tap
-brew install stackcube      # CLI (developers / operators)
-brew install stackcubed     # daemon (server admins)
+brew install stackcube      # PaaS CLI (developers / operators)
+brew install stackcubed     # PaaS daemon (server admins)
+brew install stackspace     # meta-repo workspace driver
 ```
 
 After installing `stackcubed`, run the next-step command printed by brew
@@ -27,13 +28,16 @@ package state honest.
 
 ## What's in the tap
 
-| Formula        | Binary       | Audience                          |
-|----------------|--------------|-----------------------------------|
-| `stackcube`    | `stackcube`  | Developers, operators (CLI)       |
-| `stackcubed`   | `stackcubed` | Server admins (daemon)            |
+| Formula        | Binary       | Audience                                |
+|----------------|--------------|-----------------------------------------|
+| `stackcube`    | `stackcube`  | Developers, operators (PaaS CLI)        |
+| `stackcubed`   | `stackcubed` | Server admins (PaaS daemon)             |
+| `stackspace`   | `stackspace` | Workspace authors managing meta-repos   |
 
-The two formulas are physically independent but operationally coupled:
-both bump in lockstep with each `paas/` release.
+`stackcube` and `stackcubed` are physically independent but operationally
+coupled — both bump in lockstep with each `paas/` release. `stackspace`
+is independent and ships from its own repo
+([StackCube/stackspace](https://github.com/StackCube/stackspace)).
 
 ## Snapshots and version pinning
 
