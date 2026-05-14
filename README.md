@@ -11,6 +11,9 @@ brew install stackcubed     # PaaS daemon (server admins)
 brew install stackspace     # meta-repo workspace driver
 ```
 
+`stackspace` installs on macOS (Apple Silicon + Intel) and Linux. `stackcube`
+and `stackcubed` are currently macOS (Apple Silicon) only.
+
 After installing `stackcubed`, run the next-step command printed by brew
 (`stackcubed service install --admin-key … --domain …`) to set up the
 launchd LaunchAgent.
@@ -28,11 +31,11 @@ package state honest.
 
 ## What's in the tap
 
-| Formula        | Binary       | Audience                                |
-|----------------|--------------|-----------------------------------------|
-| `stackcube`    | `stackcube`  | Developers, operators (PaaS CLI)        |
-| `stackcubed`   | `stackcubed` | Server admins (PaaS daemon)             |
-| `stackspace`   | `stackspace` | Workspace authors managing meta-repos   |
+| Formula        | Binary       | Audience                                | Platforms                          |
+|----------------|--------------|-----------------------------------------|------------------------------------|
+| `stackcube`    | `stackcube`  | Developers, operators (PaaS CLI)        | macOS (Apple Silicon)              |
+| `stackcubed`   | `stackcubed` | Server admins (PaaS daemon)             | macOS (Apple Silicon)              |
+| `stackspace`   | `stackspace` | Workspace authors managing meta-repos   | macOS (Apple Silicon + Intel), Linux |
 
 `stackcube` and `stackcubed` are physically independent but operationally
 coupled — both bump in lockstep with each `paas/` release. `stackspace`
