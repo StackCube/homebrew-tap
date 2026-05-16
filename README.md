@@ -8,10 +8,10 @@ Homebrew tap for the [StackCube](https://stackcube.dev) suite.
 brew tap stackcube/tap
 brew install stackcube      # PaaS CLI (developers / operators)
 brew install stackcubed     # PaaS daemon (server admins)
-brew install stackspace     # meta-repo workspace driver
+brew install metastack     # meta-repo workspace driver
 ```
 
-`stackspace` installs on macOS (Apple Silicon + Intel) and Linux. `stackcube`
+`metastack` installs on macOS (Apple Silicon + Intel) and Linux. `stackcube`
 and `stackcubed` are currently macOS (Apple Silicon) only.
 
 After installing `stackcubed`, run the next-step command printed by brew
@@ -35,12 +35,12 @@ package state honest.
 |----------------|--------------|-----------------------------------------|------------------------------------|
 | `stackcube`    | `stackcube`  | Developers, operators (PaaS CLI)        | macOS (Apple Silicon)              |
 | `stackcubed`   | `stackcubed` | Server admins (PaaS daemon)             | macOS (Apple Silicon)              |
-| `stackspace`   | `stackspace` | Workspace authors managing meta-repos   | macOS (Apple Silicon + Intel), Linux |
+| `metastack`   | `metastack` | Workspace authors managing meta-repos   | macOS (Apple Silicon + Intel), Linux |
 
 `stackcube` and `stackcubed` are physically independent but operationally
-coupled — both bump in lockstep with each `paas/` release. `stackspace`
+coupled — both bump in lockstep with each `paas/` release. `metastack`
 is independent and ships from its own repo
-([StackCube/stackspace](https://github.com/StackCube/stackspace)).
+([StackCube/metastack](https://github.com/StackCube/metastack)).
 
 ## Snapshots and version pinning
 
