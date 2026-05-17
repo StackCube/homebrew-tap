@@ -6,9 +6,13 @@ Homebrew tap for the [StackCube](https://stackcube.dev) suite.
 
 ```sh
 brew tap stackcube/tap
-brew install stackpaas      # CLI (developers / operators)
-brew install stackpaasd     # daemon (server admins)
+brew install stackpaas      # PaaS CLI (developers / operators)
+brew install stackpaasd     # PaaS daemon (server admins)
+brew install metastack      # meta-repo workspace driver
 ```
+
+`metastack` installs on macOS (Apple Silicon + Intel) and Linux. `stackpaas`
+and `stackpaasd` are currently macOS (Apple Silicon) only.
 
 After installing `stackpaasd`, run the next-step command printed by brew
 (`stackpaasd service install --admin-key … --domain …`) to set up the
@@ -27,13 +31,16 @@ package state honest.
 
 ## What's in the tap
 
-| Formula        | Binary       | Audience                          |
-|----------------|--------------|-----------------------------------|
-| `stackpaas`    | `stackpaas`  | Developers, operators (CLI)       |
-| `stackpaasd`   | `stackpaasd` | Server admins (daemon)            |
+| Formula        | Binary       | Audience                                | Platforms                            |
+|----------------|--------------|-----------------------------------------|--------------------------------------|
+| `stackpaas`    | `stackpaas`  | Developers, operators (PaaS CLI)        | macOS (Apple Silicon)                |
+| `stackpaasd`   | `stackpaasd` | Server admins (PaaS daemon)             | macOS (Apple Silicon)                |
+| `metastack`    | `metastack`  | Workspace authors managing meta-repos   | macOS (Apple Silicon + Intel), Linux |
 
-The two formulas are physically independent but operationally coupled:
-both bump in lockstep with each `paas/` release.
+`stackpaas` and `stackpaasd` are physically independent but operationally
+coupled — both bump in lockstep with each `paas/` release. `metastack`
+is independent and ships from its own repo
+([StackCube/metastack](https://github.com/StackCube/metastack)).
 
 ## Snapshots and version pinning
 
