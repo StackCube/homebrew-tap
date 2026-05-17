@@ -6,21 +6,21 @@ Homebrew tap for the [StackCube](https://stackcube.dev) suite.
 
 ```sh
 brew tap stackcube/tap
-brew install stackcube      # CLI (developers / operators)
-brew install stackcubed     # daemon (server admins)
+brew install stackpaas      # CLI (developers / operators)
+brew install stackpaasd     # daemon (server admins)
 ```
 
-After installing `stackcubed`, run the next-step command printed by brew
-(`stackcubed service install --admin-key … --domain …`) to set up the
+After installing `stackpaasd`, run the next-step command printed by brew
+(`stackpaasd service install --admin-key … --domain …`) to set up the
 launchd LaunchAgent.
 
 ## Upgrades
 
 ```sh
-brew update && brew upgrade stackcube       # or stackcubed
+brew update && brew upgrade stackpaas       # or stackpaasd
 ```
 
-`stackcube update` (the binary's own self-update subcommand) detects when
+`stackpaas update` (the binary's own self-update subcommand) detects when
 it's been installed via Homebrew and refuses to swap the binary in
 place — it tells you to use `brew upgrade` instead. This keeps brew's
 package state honest.
@@ -29,8 +29,8 @@ package state honest.
 
 | Formula        | Binary       | Audience                          |
 |----------------|--------------|-----------------------------------|
-| `stackcube`    | `stackcube`  | Developers, operators (CLI)       |
-| `stackcubed`   | `stackcubed` | Server admins (daemon)            |
+| `stackpaas`    | `stackpaas`  | Developers, operators (CLI)       |
+| `stackpaasd`   | `stackpaasd` | Server admins (daemon)            |
 
 The two formulas are physically independent but operationally coupled:
 both bump in lockstep with each `paas/` release.
@@ -38,11 +38,11 @@ both bump in lockstep with each `paas/` release.
 ## Snapshots and version pinning
 
 Brew is `latest`-only. For dev snapshots or pinning to a specific build,
-install stackcube outside Homebrew and use:
+install stackpaas outside Homebrew and use:
 
 ```sh
-stackcube update --version v0.0.0-snapshot-<sha>
-stackcube update --version vX.Y.Z
+stackpaas update --version v0.0.0-snapshot-<sha>
+stackpaas update --version vX.Y.Z
 ```
 
 ## Adding a new formula
